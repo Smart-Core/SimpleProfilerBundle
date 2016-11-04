@@ -10,11 +10,7 @@ class ProfilerExtension extends \Twig_Extension
     public function getFunctions()
     {
         return [
-            'simple_profiler' => new \Twig_Function_Method(
-                $this,
-                'simpleProfiler',
-                ['is_safe' => ['html'],
-            ]),
+            new \Twig_SimpleFunction('simple_profiler', [$this, 'simpleProfiler'], ['is_safe' => ['html']]),
         ];
     }
 
