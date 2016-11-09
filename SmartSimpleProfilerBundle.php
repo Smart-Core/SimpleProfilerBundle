@@ -4,6 +4,8 @@ namespace SmartCore\Bundle\SimpleProfilerBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
+require_once 'Profiler.php';
+
 class SmartSimpleProfilerBundle extends Bundle
 {
     public function boot()
