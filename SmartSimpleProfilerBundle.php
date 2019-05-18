@@ -11,6 +11,8 @@ class SmartSimpleProfilerBundle extends Bundle
     public function boot()
     {
         \Profiler::setKernel($this->container->get('kernel'));
+        \Profiler::enable();
+        \Profiler::init();
 
         if ($this->container->get('kernel')->getEnvironment() == 'prod' and $this->container->has('smart_simple_profiler.db.logger')) {
             $this

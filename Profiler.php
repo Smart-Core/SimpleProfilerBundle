@@ -312,5 +312,3 @@ class Profiler
         echo($output);
     }
 }
-
-Profiler::init();

@@ -1,6 +1,7 @@
 services:
     smart_simple_profiler.db.logger:
         class: Doctrine\DBAL\Logging\DebugStack
+        public: true
 
     smart_simple_profiler.twig.extension:
         class: SmartCore\Bundle\SimpleProfilerBundle\Twig\ProfilerExtension

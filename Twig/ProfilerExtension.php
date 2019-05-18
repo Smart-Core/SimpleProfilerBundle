@@ -2,7 +2,10 @@
 
 namespace SmartCore\Bundle\SimpleProfilerBundle\Twig;
 
-class ProfilerExtension extends \Twig_Extension
+use Twig\Extension\AbstractExtension;
+use Twig\TwigFunction;
+
+class ProfilerExtension extends AbstractExtension
 {
     /**
      * @return array
@@ -10,7 +13,7 @@ class ProfilerExtension extends \Twig_Extension
     public function getFunctions()
     {
         return [
-            new \Twig_SimpleFunction('simple_profiler', [$this, 'simpleProfiler'], ['is_safe' => ['html']]),
+            new TwigFunction('simple_profiler', [$this, 'simpleProfiler'], ['is_safe' => ['html']]),
         ];
     }
 
