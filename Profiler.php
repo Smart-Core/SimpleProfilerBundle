@@ -128,7 +128,7 @@ class Profiler
     {
         self::$kernel = $kernel;
         // @todo имя sql логгера.
-        if ($kernel->getEnvironment() === 'prod' and $kernel->getContainer()->has('smart_simple_profiler.db.logger')) {
+        if ($kernel->getEnvironment() === 'prod' and !empty($kernel->getContainer()) and $kernel->getContainer()->has('smart_simple_profiler.db.logger')) {
             self::$dbLogger = $kernel->getContainer()->get('smart_simple_profiler.db.logger');
         }
     }
